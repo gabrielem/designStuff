@@ -6,7 +6,7 @@ export const RightSideMenu = (props) => {
   const bgStyle = { background: props.bgColor ? props.bgColor : '#000000cc' }
   return (
     <div className='SideMenu'>
-      <div className={`action ${menuStatus}`} onClick={(e) => {
+      <div data-id={'SideMenu-action'} className={`action ${menuStatus}`} onClick={(e) => {
         e.preventDefault()
         setMenuStatus(menuStatus === 'open' ? 'closed' : 'open')
       }}>
