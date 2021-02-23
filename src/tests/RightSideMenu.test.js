@@ -9,11 +9,16 @@ it('checkMenu Redner', () => {
   expect(menu).toBeTruthy()
 })
 
-describe('Click open menu', () => {
+it('checkMenuAction Render', () => {
+  const {container} = render(<RightSideMenu />)
+  const action = container.querySelector('[data-id="SideMenu-action"]')
+  expect(action).toBeTruthy()
+})
+
+describe('Check Click Will Open the Menu', () => {
   it('onClick', () => {
     const {container} = render(<RightSideMenu />)
     const action = container.querySelector('[data-id="SideMenu-action"]')
-    expect(action).toBeTruthy()
     expect(container.firstChild.firstChild).toHaveClass('closed')
     fireEvent.click(action)
     expect(container.firstChild.firstChild).toHaveClass('open')
