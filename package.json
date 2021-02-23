@@ -1,6 +1,6 @@
 {
   "name": "designstuff",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A collection of react component for design purpose. Buttons, menu ecc.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
