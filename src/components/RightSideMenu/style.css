@@ -1,0 +1,156 @@
+.SideMenu{ position: absolute; top:0; left:0;box-sizing: border-box;}
+.SideMenu .action{
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 9px;
+  padding:5px 8px;
+  position: fixed;
+  top:25px;
+  right: 30px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.SideMenu .action:hover{
+  -webkit-box-shadow: 0px 0px 9px 5px rgba(265,265,265,0.55);
+  -moz-box-shadow: 0px 0px 9px 5px rgba(265,265,265,0.55);
+  box-shadow: 0px 0px 9px 5px rgba(265,265,265,0.55);
+  transition: 200ms;
+}
+.SideMenu .action div{
+  width: 30px;
+  background: #ffffff;
+  margin:6px 0;
+  height: 4px;
+  box-sizing: border-box;
+}
+.SideMenu .action div.c,
+.SideMenu .action.open div.f,
+.SideMenu .action.open div.l {
+  display: none;
+  box-sizing: border-box;
+}
+.SideMenu .action.open div.c{
+  display: block;
+  position: absolute;
+  top:15px;
+  left:3px;
+  width: 40px;
+  -ms-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.SideMenu .action.open div.m {
+  position: absolute;
+  top:15px;
+  left:3px;
+  width: 40px;
+  -webkit-animation: rotatingMenuIcon 0.3s;
+  -moz-animation: rotatingMenuIcon 0.3s;
+  -ms-animation: rotatingMenuIcon 0.3s;
+  -o-animation: rotatingMenuIcon 0.3s;
+  animation: rotatingMenuIcon 0.3s;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes rotatingMenuIcon /* Safari and Chrome */ {
+  to {
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+@keyframes rotatingMenuIcon {
+  to {
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.SideMenu .menu{
+  /* background: #000000cc; */
+  height: 100%;
+  right: -500px;
+  position: fixed;
+  top: 0;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  -webkit-transform: translateX(110%);
+  -ms-transform: translateX(110%);
+  transform: translateX(110%);
+  width: 100%;
+  max-width: 480px;
+  z-index: 998;
+  box-sizing: border-box;
+}
+.SideMenu .overlay{
+  background: #000000;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  z-index: 997;
+  transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  box-sizing: border-box;
+}
+.SideMenu .overlay.open{
+  opacity: 0.35;
+  height: 100%;
+  transition: opacity .55s ease-in-out;
+  -moz-transition: opacity .55s ease-in-out;
+  -webkit-transition: opacity .55s ease-in-out;
+  box-sizing: border-box;
+}
+
+
+.SideMenu .menu .links {
+  margin: 90px 0 0 0;
+  box-sizing: border-box;
+}
+.SideMenu .menu .links a span{
+  font-size:25px;
+  text-align: center;
+  display: inline-block;
+  width: 30px;
+  margin-right:10px;
+}
+.SideMenu .menu .links a{
+  line-height: 25px;
+  font-size:18px;
+  display: block;
+  border-bottom: 1px solid #afafaf90;
+  padding: 20px 5px 20px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: left;
+}
+
+.SideMenu .menu .links a:hover{
+  background: inherit;
+}
+
+.SideMenu .menu.open {
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+      box-sizing: border-box;
+}
+
+@-webkit-keyframes slide {
+    100% { right: 0; }
+}
+
+@keyframes slide {
+    100% { right: 0; }
+}
