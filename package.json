@@ -4,6 +4,10 @@
   "description": "A collection of react component for design purpose. Buttons, menu ecc.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.13.4"
+  },
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006",
