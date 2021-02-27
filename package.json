@@ -8,13 +8,18 @@
     "node": "12.16.1",
     "npm": "6.13.4"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
     "build-lib": "rollup -c",
-    "publish": "npm publish --access public",
-    "test:watch": "jest --watch"
+    "publish": "npm run build-lib && npm publish --access public",
+    "test:watch": "jest --watch",
+    "prepublish": "npm run build-lib"
   },
   "repository": {
     "type": "git",
@@ -35,6 +40,7 @@
     "@storybook/addon-essentials": "^6.1.19",
     "@storybook/addon-links": "^6.1.19",
     "@storybook/react": "^6.1.19",
+    "@storybook/storybook-deployer": "^2.8.7",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
